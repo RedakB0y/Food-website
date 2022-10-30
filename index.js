@@ -7,6 +7,8 @@ const passport = require("passport");
 const { user, comment } = require("./mongoDB");
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
 const app = express();
+let value = "Food Website";
+let count = 0;
 
 
 app.use(express.json())
@@ -34,32 +36,18 @@ passport.use(new GoogleStrategy({
     }
 ));
 
-
-
-
 app.get('/', (req, res) => {
-    res.render("login.ejs", { title: "Food Website" });
-})
+    if (count == 1) {
+        value = "Invalid Password";
+    }
+    else if (count == 0) {
+        value = "Food Website";
+    }
+    else if (count == 2) {
+        value = "Invalid Username";
+    }
+    res.render("login.ejs", { title: value });
 
-app.post("/login", (req, res) => {
-    const userdata = new user({
-        username: req.body.name,
-        password: req.body.pass,
-    })
-    req.login(userdata, function (err) {
-        if (err) {
-            res.send(err);
-        } else {
-            res.redirect("/main");
-        }
-    })
-})
-app.post("/logout",(req,res)=>{
-    
-    req.logout(function(err) {
-        if (err) { return next(err); }
-        res.redirect('/');
-      });
 })
 
 app.get('/auth/google',
@@ -88,6 +76,7 @@ app.get("/main", (req, res) => {
     }
 });
 app.post("/main", (req, res) => {
+    console.log(req.user);
     let comm = new comment({
         title: req.body.cm_name,
         commentcontent: req.body.cm_content,
@@ -115,6 +104,32 @@ app.post("/signup", (req, res) => {
 
     });
 });
+app.post("/login", (req, res) => {
+    user.find({}, (err, userfound) => {
+        for (let index = 0; index < userfound.length; index++) {
+            const element = userfound[index];
+            if (element.username == req.body.username) {
+                count = 1;
+                break;
+            }
+            else {
+                count = 2;
+            }
+        }
+
+    })
+    passport.authenticate('local', { failureRedirect: '/' })(req, res, function () {
+        res.redirect("/main");
+    });
+
+})
+app.post("/logout", (req, res) => {
+    count = 0;
+    req.logout(function (err) {
+        if (err) { return next(err); }
+        res.redirect('/');
+    });
+})
 
 
 const PORT = process.env.PORT || 3000;

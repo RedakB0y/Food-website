@@ -3,8 +3,9 @@ body {
     background-color: red;
     color: white;
     font-family: auto;
-    margin:1vw;
+    margin: 1vw;
     line-height: normal;
+
 }
 
 .homeHead {
@@ -18,9 +19,11 @@ body {
     margin-bottom: 3vw;
 }
 
-#sb {
+.sb {
     display: flex;
     justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .sb1 {
@@ -61,3 +64,7 @@ body {
     /* margin-top: 1.2vw; */
     margin-left: 1vw;
 }
+
+/* label{
+    font-size: 2vw;
+} */
