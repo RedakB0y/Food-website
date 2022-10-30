@@ -1,0 +1,78 @@
+
+@media (min-width:465px) and (max-width:753px) {
+    #burger-image {
+        position: absolute;
+        visibility: hidden;
+    }
+
+    #navbar_ul {
+        padding-left: 20px;
+        float:left;
+        display: block;
+    }
+    #navbar{
+        overflow: auto;
+    }
+
+    #navbar_ul li {
+        padding-left: 0px;
+        margin: 5px;
+        padding-right: 10px;
+        margin-top:22px;
+        
+    }
+
+    #first_block_headline {
+        margin-top:15px;
+    }
+    #second_block{
+        margin-top: -2px;
+    }
+    #text1{
+        margin-top: -2px;
+    }
+    #first_block_lines{
+        padding-bottom: 15px;
+    }
+
+}
+
+@media only screen and (max-width:465px) {
+    #navbar-icon {
+        visibility: visible;
+        position: relative;
+        float: right;
+        width: 47px;
+        margin-top: 10px;
+        border-radius: 11px;
+        display: block;
+
+    }
+    #burger-image {
+        position: absolute;
+        visibility: hidden;
+    }
+
+    #navbar_ul {
+        display: none;
+        float: right;
+        
+        
+    }
+
+    #navbar_ul li {
+        display: block;
+        float: none;
+        position: relative;
+        top: 58px;
+        left: 55px;
+        padding-left: 0px;
+        margin: 0px;
+        padding: 1.5vw;
+        padding-right: 40px;
+        font-size: 3vw;
+        
+
+    }
+
+}

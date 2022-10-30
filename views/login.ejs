@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<link href=" https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet'
+    type='text/css'>
+<link rel="stylesheet" href="css/bootstrap-social.css">
+<link rel="stylesheet" href="css/home_page.css" type="text/css">
+<div>
+
+
+    <div class="homepage">
+        <h1 class="homeHead">Welcome!!</h1>
+    </div>
+    <span id="sb">
+        <div class="sb1 form">
+            <form action="/login" method="post">
+                <h1 class="home_sb_Head">
+                    <%=title%>
+                </h1>
+                <div class="f_form">
+                    <label for="name" style="display: block;">Enter your name : </label>
+                    <input type="text" id="name" class="forminput" name="name" required>
+                </div>
+                <div class="s_form">
+                    <label for="pass" style="display: block;">Enter your password : </label>
+                    <input type="password" id="pass" class="forminput" name="pass" required>
+                </div>
+                <button type="submit">Log in</button>
+            </form>
+            <div id="home_sign">
+                <p>Don't have an account?</p>
+                <a href="/signup">Sign up</a>
+            </div>
+
+        </div>
+
+        <div class="home_second_block">
+            <img src="images/home_page/home_icon.png" alt="Image error" class="img">
+            <a class="btn btn-lg btn-block btn-social btn-google" role="button" href="auth/google/">
+                <i class="fa fa-google"></i> Sign in with Google
+            </a>
+
+        </div>
+    </span>
+
+
+</div>
