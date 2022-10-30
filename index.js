@@ -48,7 +48,7 @@ app.post("/login", (req, res) => {
     })
     req.login(userdata, function (err) {
         if (err) {
-            console.log(err);
+            res.send(err);
         } else {
             res.redirect("/main");
         }
@@ -71,7 +71,7 @@ app.get("/main", (req, res) => {
     if (req.isAuthenticated()) {
         comment.find({}, (err, data) => {
             if (err) {
-                console.log(err);
+                res.send(err);
             } else {
                 res.render("main.ejs", { coment: data });
             }
@@ -99,8 +99,6 @@ app.get("/signup", (req, res) => {
 app.post("/signup", (req, res) => {
     user.register({ username: req.body.username, gmail: req.body.mail }, req.body.password, function (err, userdata) {
         if (err) {
-            console.log("error found");
-            console.log(err);
             res.redirect("/");
         } else {
             passport.authenticate('local')(req, res, function () {
