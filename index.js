@@ -54,6 +54,13 @@ app.post("/login", (req, res) => {
         }
     })
 })
+app.post("/logout",(req,res)=>{
+    
+    req.logout(function(err) {
+        if (err) { return next(err); }
+        res.redirect('/');
+      });
+})
 
 app.get('/auth/google',
     passport.authenticate('google', { scope: ['profile'] }));
