@@ -27,7 +27,7 @@ app.use(passport.session());
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "https://food-website-redakboy.herokuapp.com"
+    callbackURL: "https://food-website-redakboy.herokuapp.com/auth/google/main"
 },
     function (accessToken, refreshToken, profile, cb) {
         user.findOrCreate({ googleId: profile.id }, function (err, user) {
