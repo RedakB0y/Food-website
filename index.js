@@ -9,8 +9,6 @@ var GoogleStrategy = require('passport-google-oauth20').Strategy;
 const app = express();
 let value = "Food Website";
 let count = 0;
-
-
 app.use(express.json())
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
@@ -27,7 +25,7 @@ app.use(passport.session());
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "https://food-website-redakboy.herokuapp.com/auth/google/main"
+    callbackURL: "http://localhost:3000/auth/google/main"
 },
     function (accessToken, refreshToken, profile, cb) {
         user.findOrCreate({ googleId: profile.id }, function (err, user) {

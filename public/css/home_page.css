@@ -1,11 +1,10 @@
 body {
     background-image: linear-gradient(to bottom right, #f64b3c, #f6eedf);
-    background-color: red;
     color: white;
     font-family: auto;
-    margin: 1vw;
+    margin: 12.63px;
     line-height: normal;
-
+    font-size: 25px;
 }
 
 .homeHead {
@@ -13,10 +12,10 @@ body {
 }
 
 .img {
-    display: block;
+    display: inline;
     color: red;
-    border-radius: 3vw;
-    margin-bottom: 3vw;
+    border-radius: 37.89px;
+    margin-bottom: 37.89px;
 }
 
 .sb {
@@ -27,44 +26,45 @@ body {
 }
 
 .sb1 {
-    margin-top: 3vw;
+    margin-top: 37.89px;
     background-color: #F6563C;
-    width: 34vw;
-    height: 34vw;
+    width: 429.42px;
+    height: 396.42px;
 }
 
 .home_second_block {
-    /* text-align: center; */
-    float: right;
-    margin-right: 12vw;
-    margin-top: 6vw;
+    text-align: center;
+    margin-top: 75.78px;
 }
 
 .home_sb_Head {
     color: white;
-    padding-left: 2vw;
+    padding-left: 25.26px;
     text-align: center;
 }
 
 .form {
-    padding-left: 2vw;
+    padding-left: 25.26px;
 }
 
 .forminput {
-    margin: 1vw;
+    margin: 12.63px;
     margin-left: 0px;
 }
 
 #home_sign {
-    margin-top: 4vw;
+    margin-top: 50.52px;
     display: flex;
 }
 
 #home_sign a {
-    /* margin-top: 1.2vw; */
-    margin-left: 1vw;
+    margin-left: 12.63px;
 }
 
-/* label{
-    font-size: 2vw;
-} */
+@media screen and (max-width:980px) {
+    .sb {
+        flex-direction: column;
+        align-content: center;
+    }
+    
+}
